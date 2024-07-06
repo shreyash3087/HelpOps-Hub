@@ -43,10 +43,6 @@
   box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
 }
 
-.dark-mode .hamburger div {
-  background-color: #e0e0e0;
-}
-
 .dark-mode p {
   color: #e0e0e0 !important;
 }

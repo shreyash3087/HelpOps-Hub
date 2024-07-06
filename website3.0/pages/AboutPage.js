@@ -1,7 +1,9 @@
 "use client"
 import React, { useEffect } from "react";
 // import "@stylesheets/abouts.css";
-
+import AuthButton from "@components/AuthButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 function AboutPage() {
 
 
@@ -38,7 +40,22 @@ function AboutPage() {
     };
   }, []);
   return (
-    <div className="w-full mt-36 p-4 md:px-8 lg:px-16">
+    <div>
+      <div className="relative mt-36 items-center gap-2 hidden max-[400px]:flex justify-center top-0 w-full">
+        <a href="https://github.com/sponsors/mdazfar2" target="_blank">
+          <button
+            className="bg-gray-100/80 border-none rounded-2xl shadow-md shadow-black/20 text-black text-xl cursor-pointer text-center transition-all duration-500 ease-in-out w-30 p-2 hover:transform hover:translate-x-2.5 hover:bg-none hover:border-2 hover:border-whitesmoke mr-5"
+            style={{ fontFamily: "ubuntu" }}
+          >
+            <FontAwesomeIcon icon={faHeart} id="heart" width={25} />
+            Sponsor
+          </button>
+        </a>
+        <div className="block">
+          <AuthButton />
+        </div>
+      </div>
+    <div className="w-full mt-40 max-[400px]:mt-10 p-4 md:px-8 lg:px-16">
       {/* Section: Title */}
       <div className="text-4xl text-center font-semibold">About us</div>
 
@@ -109,6 +126,7 @@ function AboutPage() {
           <img src="/benefit.png" alt="Benefits" className="w-3/4 md:w-full hover:scale-90 transition-all" />
         </div>
       </div>
+    </div>
     </div>
   );
 }

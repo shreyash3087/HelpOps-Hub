@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import "@/stylesheets/teams.css";
-
+import AuthButton from "@components/AuthButton";
 //Importing FontAwesome for Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
@@ -387,6 +387,21 @@ function TeamsPage() {
   }
 
   return (
+    <div className="m-0 mt-[160px] font-arial min-h-screen w-full block">
+      <div className="relative items-center gap-2 hidden max-[400px]:flex justify-center w-full">
+        <a href="https://github.com/sponsors/mdazfar2" target="_blank">
+          <button
+            className="bg-gray-100/80 border-none rounded-2xl shadow-md shadow-black/20 text-black text-xl cursor-pointer text-center transition-all duration-500 ease-in-out w-30 p-2 hover:transform hover:translate-x-2.5 hover:bg-none hover:border-2 hover:border-whitesmoke mr-5"
+            style={{ fontFamily: "ubuntu" }}
+          >
+            <FontAwesomeIcon icon={faHeart} id="heart" width={25} />
+            Sponsor
+          </button>
+        </a>
+        <div className="block">
+          <AuthButton />
+        </div>
+      </div>
     <div className="m-0 font-arial min-h-screen w-full block">
       {/* Section: Meet Our Team */}
 
@@ -644,6 +659,7 @@ function TeamsPage() {
           Load More
         </button>
       </div>
+    </div>
     </div>
   );
 }
