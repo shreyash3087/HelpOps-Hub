@@ -13,6 +13,7 @@ import {
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import AuthButton from "@components/AuthButton";
+import { ContextProvider } from '@context/store';
 //Importing the AOS Package for Scroll Animations
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -258,22 +259,32 @@ function HomePage() {
         />
       )}
       <div className="relative h-screen max-sm:h-0">
-          {loadSpline && (
-            <div className={`block min-h-[720px] h-screen max-xl:hidden fade-in ${visible ? "visible" : ""}`} ref={splineRef}>
-              <Spline scene="/Section1_Scene.splinecode" key={splineKey} />
-            </div>
-          )}
+        {loadSpline && (
+          <div
+            className={`block min-h-[720px] h-screen max-xl:hidden fade-in ${
+              visible ? "visible" : ""
+            }`}
+            ref={splineRef}
+          >
+            <Spline scene="/Section1_Scene.splinecode" key={splineKey} />
+          </div>
+        )}
       </div>
       <div className="items-center gap-2 hidden max-[400px]:flex relative justify-center top-40">
-          <a href="https://github.com/sponsors/mdazfar2" target="_blank">
-              <button className="bg-gray-100/80 border-none rounded-2xl shadow-md shadow-black/20 text-black text-xl cursor-pointer text-center transition-all duration-500 ease-in-out w-30 p-2 hover:transform hover:translate-x-2.5 hover:bg-none hover:border-2 hover:border-whitesmoke mr-5" style={{fontFamily:"ubuntu"}}>
-                <FontAwesomeIcon icon={faHeart} id="heart" width={25} />
-                Sponsor
-              </button>
-            </a>
-            <div className="block">
-              <AuthButton />
-            </div>
+        <a href="https://github.com/sponsors/mdazfar2" target="_blank">
+          <button
+            className="bg-gray-100/80 border-none rounded-2xl shadow-md shadow-black/20 text-black text-xl cursor-pointer text-center transition-all duration-500 ease-in-out w-30 p-2 hover:transform hover:translate-x-2.5 hover:bg-none hover:border-2 hover:border-whitesmoke mr-5"
+            style={{ fontFamily: "ubuntu" }}
+          >
+            <FontAwesomeIcon icon={faHeart} id="heart" width={25} />
+            Sponsor
+          </button>
+        </a>
+        <div className="block">
+          <ContextProvider>
+            <AuthButton />
+          </ContextProvider>
+        </div>
       </div>
       <div className="absolute max-sm:static max-sm:mt-48 z-10 top-48 max-xl:w-full max-xl:flex max-xl:justify-center max-xl:ml-0 flex justify-left ml-32 items-center">
         <div className="p-16 max-[420px]:px-0 bg-white rounded-3xl shadow-xl max-sm:flex max-sm:flex-col max-sm:justify-center max-sm:items-center">
