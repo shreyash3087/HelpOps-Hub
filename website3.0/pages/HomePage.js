@@ -12,7 +12,7 @@ import {
   faAnglesDown,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
-import AuthButton from "@components/AuthButton";
+import Auth from "@components/Auth";
 import { GlobalContext } from '@context/store';
 //Importing the AOS Package for Scroll Animations
 import AOS from "aos";
@@ -281,9 +281,7 @@ function HomePage() {
           </button>
         </a>
         <div className="block">
-          <GlobalContext>
-            <AuthButton />
-          </GlobalContext>
+          <Auth/>
         </div>
       </div>
       <div className="absolute max-sm:static max-sm:mt-48 z-10 top-48 max-xl:w-full max-xl:flex max-xl:justify-center max-xl:ml-0 flex justify-left ml-32 items-center">
